@@ -70,14 +70,16 @@
          <p>Connect with skilled student-artisans in University of Lagos! </p> <br>
          <p class="text-xl font-mono font-thin">Find reliable services from talented students on campus.</p>
 
-          <button class="mt-5 bg-blue-800 text-lg text-white font-semibold 
-                         py-2 px-4 rounded-xl hover:bg-blue-500 md:text-center 
+        <form action="{{ url('/homepage') }}" method="get">
+          <button type="submit" class="mt-5 bg-blue-800 text-lg text-white font-semibold
+                         py-2 px-4 rounded-xl hover:bg-blue-500 md:text-center
                          md:mx-auto sm:text-left sm:ml-0">Find Artisans</div>
+        </form>
 
       <p class="text-xl text-black font-bold font-mono">For Artisans</p>
 
       <div>
-        <a href="/register" class=" btn-get-started scrollto">Register</a>
+        <a href="{{ route('register.artisan') }}" class=" btn-get-started scrollto">Register</a>
         <a href="/login" class="btn-projects scrollto">Log In</a>
       </div><br>
 
