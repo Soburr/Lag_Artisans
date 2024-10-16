@@ -80,7 +80,7 @@
 
       <div>
         <a href="{{ route('register.artisan') }}" class=" btn-get-started scrollto">Register</a>
-        <a href="/login" class="btn-projects scrollto">Log In</a>
+        <a href="{{ route('login.artisan') }}" class="btn-projects scrollto">Log In</a>
       </div><br>
 
     </div>

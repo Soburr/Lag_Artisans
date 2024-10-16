@@ -46,7 +46,7 @@
            <div class="mt-4">
             <x-input-label for="hostel" :value="__('Select Hostel')" />
             <select name="hostel" id="hostel" class="block mt-1 w-full">
-                <option value="">Choose a hostel</option>
+                <option value="">Choose an hostel</option>
                 <option value="Amina">AMINA</option>
                 <option value="Biobaku">BIOBAKU</option>
                 <option value="El-Kanemi">EL KANEMI</option>
@@ -63,6 +63,20 @@
             <x-input-error :messages="$errors->get('hostel')" class="mt-2" />
         </div>
         
+        <!-- Level Selection -->
+        <div class="mt-4">
+            <x-input-label for="level" :value="__('Select Level')" />
+            <select name="level" id="level" class="block mt-1 w-full">
+                <option value="">Choose a year</option>
+                <option value="Year1">YEAR 1</option>
+                <option value="Year2">YEAR 2</option>
+                <option value="Year3">YEAR 3</option>
+                <option value="Year4">YEAR 4</option>
+                <option value="Year5">YEAR 5</option>
+            </select>
+            <x-input-error :messages="$errors->get('level')" class="mt-2" />
+        </div>
+
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />

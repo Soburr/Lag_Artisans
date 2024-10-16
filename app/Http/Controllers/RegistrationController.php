@@ -26,6 +26,7 @@ class RegistrationController extends Controller
             'number' => ['required', 'string', 'digits:11'],
             'department' => ['required', 'string', 'max:255'],
             'hostel' => 'required|in:Amina,Biobaku,El-Kanemi,Eni-njoku,Fagunwa,Gbajabiamila,Honours,Jaja,Kofo,Mariere,Makama,Moremi,Sodeinde',
+            'level' => 'required|in:Year1,Year2,Year3,Year4,Year5',
             'password' => ['required', 'string', 'confirmed', Rules\Password::defaults()],
         ]);
 
@@ -37,13 +38,14 @@ class RegistrationController extends Controller
             'number' => $validatedData['number'],
             'department' => $validatedData['department'],
             'hostel' => $validatedData['hostel'],
+            'level' => $validatedData['level'],
             'password' => Hash::make($validatedData['password']),  
         ]);
 
        
         Auth::guard('artisan')->login($artisan);
 
-        return redirect('/login')->with('success', 'Registration successful.');
+        return redirect('/login-artisan')->with('success', 'Registration successful.');
     }
 
 
@@ -66,7 +68,7 @@ class RegistrationController extends Controller
         if ($artisan && Hash::check($request->password, $artisan->password)) {
 
             Auth::guard('artisan')->login($artisan);
-            return redirect('/dashboard')->with('success', 'You are successfully logged in.');
+            return redirect('/artisan-dashboard')->with('success', 'You are successfully logged in.');
         } else {
             return redirect()->back()->withErrors(['email' => 'Invalid credentials provided.']);
         }
@@ -75,7 +77,7 @@ class RegistrationController extends Controller
     public function logout()
     {
         Auth::guard('artisan')->logout();
-        return redirect('/login')->with('success', 'You have been logged out.');
+        return redirect('/login-artisan')->with('success', 'You have been logged out.');
     }
 }
 
