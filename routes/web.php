@@ -12,6 +12,8 @@ Route::view('dashboard', 'dashboard')
 
 Route::get('homepage', [HomepageController::class, 'index'])->name('homepage');
 
+Route::post('homepage', [HomepageController::class, 'search'])->name('homepage');
+
 // Registration Routes
 Route::get('/register-artisan', [RegistrationController::class, 'showRegistrationForm'])->name('register.artisan');
 Route::post('/register-artisan', [RegistrationController::class, 'register']);
