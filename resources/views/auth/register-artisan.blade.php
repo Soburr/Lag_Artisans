@@ -4,8 +4,16 @@
 
         <form method="POST" action="{{ url('register-artisan') }}">
             @csrf
-<div>
-    <form wire:submit="register">
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                     <li class="text-red-500 mb-3">{{ $error }}</li>
+                  @endforeach
+              </ul>
+            </div>
+          @endif
 
         <!-- Name -->
         <div>
@@ -62,7 +70,7 @@
             </select>
             <x-input-error :messages="$errors->get('hostel')" class="mt-2" />
         </div>
-        
+
         <!-- Level Selection -->
         <div class="mt-4">
             <x-input-label for="level" :value="__('Select Level')" />
