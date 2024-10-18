@@ -1,8 +1,8 @@
 @extends('layouts.guest')
 
-@section('content')
+@section('content2')
 
-<div class="container">
+{{-- <div class="container"> --}}
     <div class="container mx-auto px-4 py-4">
         <form method="POST" action="{{ url('homepage') }}">
             @csrf
@@ -20,24 +20,29 @@
         <table class="min-w-full bg-white shadow-md border-collapse border border-gray-300">
             <thead>
                 <tr>
-                    <th class="border text-center border-gray-300 py-2 px-4">Name</th>
-                    <th class="border text-center bg-gray-100 border-gray-300 py-2 px-4">Speciality</th>
-                    <th class="border text-center border-gray-300 py-2 px-4">Hall Of Residence</th>
+                    <th class="border text-center border-gray-200 py-2 px-4">Name</th>
+                    <th class="border text-center bg-gray-100 border-gray-200 py-2 px-4">Speciality</th>
+                    <th class="border text-center border-gray-200 py-2 px-4">Hall Of Residence</th>
+                    <th class="border text-center bg-gray-100 border-gray-200 py-2 px-4">Whatsapp Number</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($artisans as $artisan)
                     <tr>
-                            <td class="border text-center bg-gray-100 border-gray-300 py-2 px-4">
-                                <a href="{{ url('/')}}" class="block text-black hover:text-black-500 px-4 py-2"> {{ $artisan->name }} </a>
+                            <td class="border text-center bg-gray-100 border-gray-200 py-2 px-2">
+                                <a href="{{ url('/')}}" class="block text-black hover:text-blue-500 px-4 py-2"> {{ $artisan->name }} </a>
                             </td>
 
-                            <td class="border text-center border-gray-300 py-2 px-4">
-                                <a href="{{ url('/')}}" class="block text-black hover:text-black-500 px-4 py-2"> {{ $artisan->artisan }} </a>
+                            <td class="border text-center border-gray-200 py-2 px-2">
+                                <a href="{{ url('/')}}" class="block text-black hover:text-blue-500 px-5 py-2"> {{ $artisan->artisan }} </a>
                             </td>
 
-                            <td class="border text-center bg-gray-100 border-gray-300 py-2 px-4">
+                            <td class="border text-center bg-gray-100 border-gray-200 py-2 px-2">
                                 <a href="{{ url('/')}}" class="block text-black hover:text-blue-500 px-4 py-2"> {{ $artisan->hostel }} </a>
+                            </td>
+
+                            <td class="border text-center bg-gray-100 border-gray-200 py-2 px-3">
+                                <a href="{{ url('/')}}" class="block text-black hover:text-blue-500 px-4 py-2"> {{ $artisan->number }} </a>
                             </td>
 
                     </tr>
@@ -50,10 +55,8 @@
             <p class="py-2 px-4"> No Artisan Found </p>
           @endif
     </div>
-</div>
+{{-- </div> --}}
 
-    <script src="app.js"></script>
-</body>
 
 
 

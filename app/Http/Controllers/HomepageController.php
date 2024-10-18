@@ -7,9 +7,10 @@ use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
-    public function index() {
-        return view('homepage');
-    }
+    // public function index() {
+    //     return view('homepage');
+    // }
+
     public function search(Request $request) {
         $query = $request->input('query');
 

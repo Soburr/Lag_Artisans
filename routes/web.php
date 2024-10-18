@@ -10,15 +10,15 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-Route::get('homepage', [HomepageController::class, 'index'])->name('homepage');
+Route::get('homepage', [HomepageController::class, 'search'])->name('homepage');
 
 Route::post('homepage', [HomepageController::class, 'search'])->name('homepage');
 
-// Registration Routes
+// Artisan Registration Routes
 Route::get('/register-artisan', [RegistrationController::class, 'showRegistrationForm'])->name('register.artisan');
 Route::post('/register-artisan', [RegistrationController::class, 'register']);
 
-// Login Routes
+// Artisan Login Routes
 Route::get('/login-artisan', [RegistrationController::class, 'showLoginForm'])->name('login.artisan');
 Route::post('/login-artisan', [RegistrationController::class, 'login']);
 
