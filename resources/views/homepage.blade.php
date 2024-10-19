@@ -42,7 +42,7 @@
                             </td>
 
                             <td class="border text-center bg-gray-100 border-gray-200 py-2 px-3">
-                                <a href="{{ url('/')}}" class="block text-black hover:text-blue-500 px-4 py-2"> {{ $artisan->number }} </a>
+                                <a href="{{ url('/contact/' . $artisan->number) }}" class="block text-black hover:text-blue-500 px-4 py-2"> {{ $artisan->number }} </a>
                             </td>
 
                     </tr>

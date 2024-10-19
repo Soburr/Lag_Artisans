@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\RegistrationController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomepageController;
@@ -13,6 +14,8 @@ Route::view('dashboard', 'dashboard')
 Route::get('homepage', [HomepageController::class, 'search'])->name('homepage');
 
 Route::post('homepage', [HomepageController::class, 'search'])->name('homepage');
+
+Route::get('/contact/{phone}', [ContactController::class, 'redirectToWhatsApp']);
 
 // Artisan Registration Routes
 Route::get('/register-artisan', [RegistrationController::class, 'showRegistrationForm'])->name('register.artisan');
