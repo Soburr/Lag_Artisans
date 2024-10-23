@@ -197,7 +197,7 @@
                 <a href="{{ url('/homepage') }}">Find Artisans</a>
               </li>
               <li class="mb-2 hover:text-green-600">
-                <a href="/">FAQs</a>
+                <a href="{{ route('frequently-asked-questions') }}">FAQs</a>
               </li>
             </ul>
           </div>
@@ -207,14 +207,14 @@
              <h2 class="text-green-600 font-bold text-xl mb-4">Contact Us</h2>
              <p class="text-gray-700">
                <i class="bi bi-envelope d-flex align-items-center mr-2"><a href="mailto:contact@example.com">adebesinnewton99@gmail.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>0814 090 2526</span></i>
+               <i class="bi bi-phone d-flex align-items-center ms-4"><span>0814 090 2526</span></i>
              </p>
           </div>
 
           {{-- Newletter --}}
           <div>
              <h2 class="text-green-600 font-bold text-xl mb-4">Stay Updated</h2>
-             <p class="text-gray-700 mb-4">Join Our Newsletter For Updates</p>
+             <p class="text-gray-700 mb-4">Join our newsletter for updates</p>
              <form action="" class="flex flex-col">
                 <input type="email" placeholder="Your email" class="border border-gray-300 p-2 mb-2 rounded focus:outline-none focus:ring-green-600">
                 <button class="bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-200">Subscribe</button>
@@ -232,7 +232,7 @@
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong> <a href="https://newton09.netlify.app/">NEWTON</a></strong> All Rights Reserved
-        <p class="mt-2"> <a href="">Terms of Service | Privacy Policy</a></p>
+        <div class="mt-2"> <a href="{{ route('policy') }}">Terms of Service | Privacy Policy</a></div>
       </div>
 
     </div>

@@ -11,6 +11,14 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::get('/frequently-asked-questions', function() {
+    return view('FAQs');
+})->name('frequently-asked-questions');
+
+Route::get('/terms-of-service', function() {
+    return view('policy');
+})->name('policy');
+
 Route::get('homepage', [HomepageController::class, 'search'])->name('homepage');
 
 Route::post('homepage', [HomepageController::class, 'search'])->name('homepage');
