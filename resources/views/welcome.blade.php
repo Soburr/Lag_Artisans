@@ -112,6 +112,9 @@
               <li><i class="bi bi-check-circle"></i> Competitive Pricing</li>
               <li><i class="bi bi-check-circle"></i> Time-Saving</li>
               <li><i class="bi bi-check-circle"></i> Wide Range Of Services</li>
+              <li><i class="bi bi-check-circle"></i> Empowering Student Talent</li>
+              <li><i class="bi bi-check-circle"></i> Affordable, Student-friendly Prices</li>
+              <li><i class="bi bi-check-circle"></i> Secure and Reliable Platform</li>
             </ul>
 
           </div>
@@ -125,7 +128,7 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Services</h2>
-          <p>Below are some of the Artisans jobs available at your disposal</p>
+          <p>Some of the Artisans jobs available at your disposal</p>
         </div>
 
         <div class="row gy-4">
