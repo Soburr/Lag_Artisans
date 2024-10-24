@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
+@extends('layouts.pages')
+
+@section('content')
+
     <body class="bg-white">
        <div class="max-w-5xl mx-auto py-12 px-4 sm:px-6 lg:px-8 container">
           <h1 class="text-3xl text-green-600 font-bold mb-4">Terms Of Service</h1>
@@ -55,6 +49,5 @@
 
 
        </div>
-    </body>
-</body>
-</html>
+
+       @endsection

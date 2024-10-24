@@ -1,1 +1,9 @@
-<h1>FAQs</h1>
+@extends('layouts.pages')
+
+@section('content')
+
+
+
+
+@endsection
+
