@@ -119,9 +119,10 @@
              <div>
                 <h2 class="text-green-600 font-bold text-xl mb-4">Stay Updated</h2>
                 <p class="text-gray-700 mb-4">Join our newsletter for updates</p>
-                <form action="" class="flex flex-col">
-                   <input type="email" placeholder="Your email" class="border border-gray-300 p-2 mb-2 rounded focus:outline-none focus:ring-green-600">
-                   <button class="bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-200">Subscribe</button>
+                <form action="{{ route('subscribe') }}" method="POST" class="flex flex-col">
+                    @csrf
+                   <input type="email" name="email" placeholder="Your email" class="border border-gray-300 p-2 mb-2 rounded focus:outline-none focus:ring-green-600">
+                   <button type="submit" class="bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-200">Subscribe</button>
                 </form>
              </div>
            </div>
