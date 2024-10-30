@@ -54,9 +54,9 @@
               <li><a class="nav-link scrollto active" href="/">Home</a></li>
               <li><a class="nav-link scrollto" href="#about">About</a></li>
               <li><a class="nav-link scrollto" href="#services">Services</a></li>
-              {{-- <li><a class="nav-link scrollto " href="#testimonials">Testimonals</a></li> --}}
+              {{-- <li><a class="nav-link scrollto " href="#testimonials">Testimonials</a></li> --}}
               <li><a class="nav-link scrollto" href="{{ route('frequently-asked-questions') }}">FAQs</a></li>
-              <li>
+              <li class="ml-4">
                 <form action="{{ url('/homepage') }}" method="get">
                     <button type="submit" class="mt-2 bg-blue-800 text-sm text-white font-semibold
                                    py-2 px-4 rounded-xl hover:bg-blue-500 md:text-center
@@ -65,7 +65,8 @@
               </li>
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
-          </nav><!-- .navbar -->
+        </nav>
+        <!-- .navbar -->
 
         </div>
       </header><!-- End Header -->
@@ -73,7 +74,6 @@
   @yield('content')
 
     {{-- Sub footer --}}
-
     <div class="container" data-aos="fade-up" data-aos-delay="400">
         <footer class="bg-gray-50 text-gray-800 py-20">
            <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
@@ -82,8 +82,8 @@
              <div>
                <h2 class="text-green-600 font-bold text-xl mb-4">About Us</h2>
                <p class="text-gray-700">
-                 We Connect talented student-artisans with students in need of services in the school hostels
-                 to provide affordable, convenient and quality solutions
+                 We connect talented student-artisans with students in need of services in the school hostels
+                 to provide affordable, convenient, and quality solutions.
                </p>
              </div>
 
@@ -109,39 +109,20 @@
              {{-- Contact Info --}}
              <div>
                 <h2 class="text-green-600 font-bold text-xl mb-4">Contact Us</h2>
-                <p class="text-gray-700">
-                  <i class="bi bi-envelope d-flex align-items-center mr-2"><a href="mailto:contact@example.com">adebesinnewton99@gmail.com</a></i>
-                  <i class="bi bi-phone d-flex align-items-center ms-4"><span>0814 090 2526</span></i>
+                <p class="text-gray-700 flex flex-col gap-2">
+                    <span class="flex items-center">
+                        <i class="bi bi-envelope text-green-600 mr-2"></i>
+                        <a href="mailto:adebesinnewton99@gmail.com">adebesinnewton99@gmail.com</a>
+                    </span>
+                    <span class="flex items-center">
+                        <i class="bi bi-phone text-green-600 mr-2"></i>
+                        <span>0814 090 2526</span>
+                    </span>
                 </p>
-             </div>
+            </div>
 
-             <div class="container">
-                @if (Session::has('success'))
-                   <div class="alert alert-success">
-                      <p>{{ (Session::get('success')) }}</p>
-                   </div> <br>
-                @endif
 
-                @if (Session::has('failure'))
-                   <div class="alert alert-danger">
-                      <p>{{ (Session::get('failure')) }}</p>
-                   </div> <br>
-                @endif
-
-                {{-- Display validation errors --}}
-               @if ($errors->any())
-                    <div class="alert alert-danger">
-                      <ul>
-                        @foreach ($errors->all() as $error)
-                           <li>{{ $error }}</li>
-                        @endforeach
-                      </ul>
-                    </div> <br>
-               @endif
-             </div>
-        
-
-             {{-- Newletter --}}
+             {{-- Newsletter --}}
              <div>
                 <h2 class="text-green-600 font-bold text-xl mb-4">Stay Updated</h2>
                 <p class="text-gray-700 mb-4">Join our newsletter for updates</p>
@@ -151,10 +132,35 @@
                    <button type="submit" class="bg-green-500 text-white py-2 rounded hover:bg-green-600 transition-colors duration-200">Subscribe</button>
                 </form>
              </div>
+
+           </div>
+
+           {{-- Alerts for success, failure, and errors --}}
+           <div class="container mt-6">
+              @if (Session::has('success'))
+                 <div class="alert alert-success">
+                    <p>{{ Session::get('success') }}</p>
+                 </div> <br>
+              @endif
+
+              @if (Session::has('failure'))
+                 <div class="alert alert-danger">
+                    <p>{{ Session::get('failure') }}</p>
+                 </div> <br>
+              @endif
+
+              @if ($errors->any())
+                  <div class="alert alert-danger">
+                    <ul>
+                      @foreach ($errors->all() as $error)
+                         <li>{{ $error }}</li>
+                      @endforeach
+                    </ul>
+                  </div> <br>
+              @endif
            </div>
         </footer>
-      </div>
-
+    </div>
 
      {{-- End Sub footer --}}
 
